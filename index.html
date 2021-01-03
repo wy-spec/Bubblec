@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>泡泡特效</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="section">
+    <h1>Bubblecs</h1>
+</div>
+<script>
+    window.onload = function () {
+        function createball() {
+            const sectionElement = document.querySelector(".section");
+            const createElement = document.createElement("span");
+            let randomNumber = Math.random() * 60;
+            createElement.style.width = randomNumber + "px";
+            createElement.style.height = randomNumber + "px";
+            createElement.style.left = Math.random() * innerWidth + "px";
+            sectionElement.append(createElement);
+            setTimeout(() => {
+                createElement.remove();
+            }, 4000)
+        }
+        setInterval(createball, 50);
+    }
+</script>
+</body>
+</html>
